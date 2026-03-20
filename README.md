@@ -2,7 +2,7 @@
 
 A neural network built from scratch in Python that learns to aproximate the function y=sin(x)
 
-📄 [View full documentation (PDF)](./documentation.pdf)
+📄 [View full documentation (PDF)](./neural-network-sinx.pdf)
 
 ## Overview
 The network is trained on angle/sine value pairs and learns to predict sin(x) for any input angle.
