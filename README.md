@@ -105,8 +105,7 @@ a_{5}^{(2)}
 $$
 And now, the activation of the output neuron, that is the prediction of the neural network for the sin(x) is:
 $$
-a = f(z) \tag{6}
-$$
+a = f(z)
 
 To make the network "learn" we need to define something called a cost function:
 
