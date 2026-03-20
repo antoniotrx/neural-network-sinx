@@ -14,11 +14,11 @@ The total number of parameters needed for this network is 16. We need 5 weight c
 
 The standard sigmoid function was used as an activation function: 
 $$
-\sigma(z) = \frac{1} {1 + e^{-z}} \tag{1}
+\sigma(z) = \frac{1} {1 + e^{-z}}
 $$
 but since this function outputs values between 0 and 1, and the sin(x) has range [-1,1], I scaled it as $2\sigma(z) - 1$ and the used activation function is:
 $$
-f(z) = 2\sigma(z) - 1 = \frac{2} {1 + e^{-z}} - 1 \tag{2}
+f(z) = 2\sigma(z) - 1 = \frac{2} {1 + e^{-z}} - 1
 $$
 
 ### 3. Forward pass
@@ -57,7 +57,7 @@ b_{2}^{(2)} \\
 b_{3}^{(2)} \\
 b_{4}^{(2)} \\
 b_{5}^{(2)}
-\end{bmatrix} \tag{3}
+\end{bmatrix}
 $$
 
 $$
@@ -76,7 +76,7 @@ z_{2}^{(2)} \\
 z_{3}^{(2)} \\
 z_{4}^{(2)} \\
 z_{5}^{(2)}
-\end{bmatrix}) \tag{4}
+\end{bmatrix})
 $$
 
 To calculate the activation of the output neuron, that is the prediction of sin(x) we first calculate:
@@ -101,7 +101,7 @@ a_{4}^{(2)} \\
 a_{5}^{(2)}
 \end{bmatrix} 
 
-+ b^{(3)}  \tag{5}
++ b^{(3)}
 $$
 And now, the activation of the output neuron, that is the prediction of the neural network for the sin(x) is:
 $$
@@ -111,7 +111,7 @@ $$
 To make the network "learn" we need to define something called a cost function:
 
 $$
-C = \frac{1} {2} (a - y)^{2}  \tag{7}
+C = \frac{1} {2} (a - y)^{2}
 $$
 
 where $y$ stands for the true value of $sin(x)$, for example if $x=\frac{\pi} {2}$ then $y=1$. We need to minimize the value of the cost function. In order to that we need to find such weight coeficients and biases such that the value of the cost function be minimal. We need to update the parameters after each run of the network in order to change the cost function value. To do that we need the gradient of the cost function which is calculated using the backpropagation algorithm.
@@ -120,7 +120,6 @@ where $y$ stands for the true value of $sin(x)$, for example if $x=\frac{\pi} {2
 
 The gradient of the cost function is:
 $$
-\begin{aligned}
 \nabla C = \frac{\partial C} {\partial w_{1}^{(3)}}\vec{e_{1}} +
            ... +
            \frac{\partial C} {\partial w_{5}^{(3)}}\vec{e_{5}} +
@@ -132,8 +131,7 @@ $$
            \frac{\partial C} {\partial b_{1}^{(2)}}\vec{e_{12}} +
            \frac{\partial C} {\partial b_{2}^{(2)}}\vec{e_{13}} +
            ... +
-           \frac{\partial C} {\partial b_{5}^{(2)}}\vec{e_{16}} \tag{8}
-\end{aligned}
+           \frac{\partial C} {\partial b_{5}^{(2)}}\vec{e_{16}}
 $$
 
 We will calculate the partial derivatives like this:
