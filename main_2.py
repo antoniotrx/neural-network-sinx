@@ -6,12 +6,13 @@ np.random.seed(4) # initialize random seed
 # Neural Net Design
 num_of_layers = 3
 hidden_layer_size = 10
-epochs = 50000
+epochs = 10000
+lr = 0.1
 
 # input layer -> hidden layer -> output layer
 # 1 neuron -> 5 neurons -> 1 neuron
 
-x_deg = np.arange(0, 361, 1) # [0, 10, 20, 30, ..., 360]
+x_deg = np.arange(0, 361, 10) # [0, 10, 20, 30, ..., 360]
 x_rad = np.deg2rad(x_deg)
 y = np.sin(x_rad) # y = y(x) = sin(x)
 xy_pairs = np.column_stack((x_rad, y))
@@ -68,10 +69,10 @@ for i in range(epochs):
         grad_weight_coef_layer_3 = gradient[2]
         grad_bias_layer_3 = gradient[3]
 
-        w1 = w1 - 0.01 * grad_weight_coef_layer_2
-        b1 = b1 - 0.01 * grad_bias_layer_2
-        w2 = w2 - 0.01 * grad_weight_coef_layer_3
-        b2 = b2 - 0.01 * grad_bias_layer_3
+        w1 = w1 - lr * grad_weight_coef_layer_2
+        b1 = b1 - lr * grad_bias_layer_2
+        w2 = w2 - lr * grad_weight_coef_layer_3
+        b2 = b2 - lr * grad_bias_layer_3
 
     if i % 500 == 0:
         print(f"Iteration {i}, Total Cost = {total_cost}")

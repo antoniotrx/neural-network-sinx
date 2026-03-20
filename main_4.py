@@ -16,7 +16,7 @@ def scaled_sigmoid(sigmoid):
     return 2*(sigmoid) - 1
 
 # Example
-test_angles = [0, 5, 18, 30, 45, 67, 90, 120, 150, 180, 220, 270, 310, 360]
+test_angles = [2, 5, 18, 25, 45, 67, 92, 123, 157, 181, 227, 278, 319, 355, 366, 378, 391, 400, 412, 444, 466, 500]
 outputs_neural_network = []
 true_values = []
 
@@ -48,4 +48,8 @@ for i in range(len(test_angles)):
 
 plt.plot(test_angles, outputs_neural_network)
 plt.plot(test_angles, true_values)
+plt.title("Comparison")
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.grid()
 plt.savefig("plot.png")
